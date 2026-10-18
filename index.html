@@ -76,7 +76,7 @@
     text-shadow: 0 5px 0 var(--ink), 0 10px 22px rgba(0, 0, 0, 0.3);
     font-variant-numeric: tabular-nums;
   }
-  .best-hud { font-family: var(--display); font-size: 14px; letter-spacing: 1px; text-shadow: 0 2px 0 var(--ink); opacity: 0.9; margin-top: 4px; }
+  .best-hud { font-family: var(--display); font-size: 14px; letter-spacing: 1px; text-shadow: 0 2px 0 var(--ink); opacity: 0.9; margin-top: 4px; white-space: nowrap; }
   @media (max-width: 520px) { .score { font-size: 46px; } .best-hud { font-size: 12px; } }
   .score.bump { animation: bump 0.3s cubic-bezier(.3, 1.8, .5, 1); }
   @keyframes bump { from { transform: scale(1.35); } }
@@ -170,7 +170,7 @@
 
   /* ---------- picker ---------- */
   .pick-label { font-family: var(--display); font-size: 15px; letter-spacing: 1px; text-shadow: 0 2px 0 var(--ink); margin-bottom: -8px; }
-  .picker { display: flex; gap: 10px; max-width: 100%; overflow-x: auto; padding: 10px 8px 12px; scrollbar-width: none; touch-action: pan-x; }
+  .picker { display: flex; flex-shrink: 0; gap: 10px; max-width: 100%; overflow-x: auto; padding: 10px 8px 12px; scrollbar-width: none; touch-action: pan-x; }
   .picker::-webkit-scrollbar { display: none; }
   .avatar {
     flex: none; width: 104px; padding: 6px 6px 8px; border-radius: 18px; display: flex; flex-direction: column; align-items: center; gap: 2px;
@@ -193,6 +193,19 @@
     .avatar { width: 80px; }
     .avatar img { width: 64px; height: 64px; }
   }
+  /* phones on their side: drop the tagline and squeeze the title screen so the cards and PLAY fit */
+  @media (max-height: 420px) {
+    #title { gap: 6px; }
+    #title .tag, #title .touch-hint { display: none; }
+    #title .logo span { font-size: 34px; }
+    #title .btn { padding: 8px 30px; }
+    #title .picker { padding: 6px 8px 8px 52px; }
+    .avatar { width: 72px; }
+    .avatar img { width: 52px; height: 52px; }
+    .avatar .bs { font-size: 10px; white-space: nowrap; }
+  }
+  /* on a phone the cards scroll from the left edge: start them clear of the round ? and 中文 buttons */
+  @media (max-width: 620px) { #title .picker { padding-left: 52px; } }
 
   /* ---------- game over ---------- */
   #over { justify-content: flex-start; padding-top: max(28px, 5vh, env(safe-area-inset-top)); background: linear-gradient(180deg, rgba(20, 18, 40, 0.55), rgba(20, 18, 40, 0) 62%); }
@@ -258,7 +271,7 @@
 <div id="toasts"></div>
 
 <div id="title" class="screen">
-  <div id="logo" class="logo" aria-label="HoppiTTy Hop"></div>
+  <div id="logo" class="logo" aria-label="HoppiTTy Hop" data-no-lang></div>
   <p class="tag">Hop across roads, rivers and train tracks with Teddy &amp; Tommy!</p>
   <div class="pick-label">PICK YOUR HOPPER</div>
   <div id="picker" class="picker" role="radiogroup" aria-label="Pick your hopper"></div>
@@ -309,6 +322,7 @@
 <script src="kit/roster.js"></script>
 <script src="kit/portraits.js"></script>
 <script src="kit/sound.js"></script>
+<script src="kit/lang.js"></script>
 <script src="kit/help.js"></script>
 <script src="js/title.js"></script>
 <script src="js/content.js"></script>
@@ -317,5 +331,6 @@
 <script src="js/hero.js"></script>
 <script src="js/game.js"></script>
 <script src="js/keys.js"></script>
+<script src="js/zh.js"></script>
 </body>
 </html>

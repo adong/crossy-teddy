@@ -941,7 +941,7 @@
   const bursts = [];
   function burst(word, x, y, z, fill, edge) {
     if (G.soak || G.attract) return;
-    const sp = new T.Sprite(new T.SpriteMaterial({ map: A.burstTexture(word, fill, edge), depthWrite: false, depthTest: false, transparent: true }));
+    const sp = new T.Sprite(new T.SpriteMaterial({ map: A.burstTexture(Kit.lang ? Kit.lang.t(word) : word, fill, edge), depthWrite: false, depthTest: false, transparent: true }));
     sp.position.set(x, y, z);
     sp.renderOrder = 10;
     scene.add(sp);

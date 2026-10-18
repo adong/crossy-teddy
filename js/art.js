@@ -581,8 +581,14 @@
     g.lineJoin = 'round';
     g.stroke();
     g.rotate(-0.12);
-    const size = word.length > 5 ? 46 : 60;
+    let size = word.length > 5 ? 46 : 60;
     g.font = `${size}px ${FONT}`;
+    // shrink a word that doesn't fit the star (a word in 中文 is wider than its letter count suggests)
+    const wide = g.measureText(word).width;
+    if (wide > 230) {
+      size = Math.floor((size * 230) / wide);
+      g.font = `${size}px ${FONT}`;
+    }
     g.textAlign = 'center';
     g.textBaseline = 'middle';
     g.lineWidth = 10;

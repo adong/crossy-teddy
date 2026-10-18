@@ -3,6 +3,7 @@
 [![HoppiTTy Hop title screen](docs/screenshot.jpg)](https://adong.github.io/crossy-teddy/)
 
 Press **?** any time (or tap the round **?** button on the left edge) to see the keys. The game waits while you look.
+Tap **中文 / EN** under it to switch between English and 中文 (the dashboard and every game remember the choice).
 
 An endless hopper in the spirit of Crossy Road, starring Teddy and Tommy, built with Claude Code from plain JavaScript and Three.js.
 Hop across a chunky voxel world of meadows, busy roads, rivers with logs and lily pads, and subway tracks with fast trains.
@@ -13,7 +14,7 @@ The name is a working title and lives in one constant, `window.CROSSY_TITLE` in 
 ## Play
 
 - **Double-click `index.html`.** It works offline because Three.js and the kit are copied into `kit/`.
-- **Send one file:** `dist/crossy-teddy.html` is the whole game in one page (about 760 KB). AirDrop or email it, then open it in a browser.
+- **Send one file:** `dist/crossy-teddy.html` is the whole game in one page (about 790 KB). AirDrop or email it, then open it in a browser.
 - Rebuild that file after any edit: `python3 kit/tools/bundle.py . --name crossy-teddy`
 - The two fonts load from Google Fonts when online. Offline, the game falls back to Arial Black and the system font.
 
@@ -106,6 +107,7 @@ Other test hooks: `game.step(seconds, { auto })` advances the game and draws syn
 index.html       page, HUD and screens (CSS inline)
 js/title.js      the game's name (one constant)
 js/content.js    the inspector's look (same as Metro Surfer's), the treats and the game-over lines
+js/zh.js         中文: every word on the page, the toasts, the ? panel and the 3D word bursts (Kit.lang); names and the logo stay English
 js/world.js      rows, cars, logs, trains, the zone generator, the crossing search, the autopilot's planner and the fairness check (no Three.js; runs in Node too)
 js/art.js        the voxel builder (each row is one mesh), cars, ice-cream trucks, buses, logs, trains, signal lights, coins, the dog, the swim ring, particles, POW! bursts
 js/hero.js       a hopping kid: Kit person + hop squash, squish, splash and swim ring, celebrations with the 🏀
