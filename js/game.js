@@ -1130,7 +1130,7 @@
     const em = (s) => s.replace(/TT/g, '<em>TT</em>');
     $('logo').innerHTML = `<span class="l1">${em(first)}</span>${rest.length ? `<span class="l2">${em(rest.join(' '))}</span>` : ''}`;
     $('logo').setAttribute('aria-label', TITLE);
-    document.title = TITLE;
+    document.title = `${TITLE} · Teddy & Tommy`;
   }
 
   // ---------------------------------------------------------------- input

@@ -2,14 +2,18 @@
 
 [![HoppiTTy Hop title screen](docs/screenshot.jpg)](https://adong.github.io/crossy-teddy/)
 
+Hop across roads, rivers and subway tracks without getting squished.
+
+**中文：** 跳过马路、小河和地铁轨道，别被压扁啦。
+
 Press **?** any time (or tap the round **?** button on the left edge) to see the keys. The game waits while you look.
 Tap the language button under it (the A文 icon) to switch between English and 中文; the dashboard and every game remember the choice.
 
-An endless hopper in the spirit of Crossy Road, starring Teddy and Tommy, built with Claude Code from plain JavaScript and Three.js.
+An endless road-crossing hopper starring Teddy and Tommy, built with Claude Code from plain JavaScript and Three.js.
 Hop across a chunky voxel world of meadows, busy roads, rivers with logs and lily pads, and subway tracks with fast trains.
 There are no image, model or audio files: every block is a coloured box, the kids come from the shared kit, and every sound is synthesised.
 
-The name is a working title and lives in one constant, `window.CROSSY_TITLE` in `js/title.js` (the logo and the page title come from it).
+The name lives in one constant, `window.CROSSY_TITLE` in `js/title.js` (the logo and the page title come from it).
 
 ## Play
 
@@ -124,7 +128,7 @@ These are written here first. They're worth moving into `~/claude-games/kit` if 
 - **Voxel builder** (`Vox` in `js/art.js`): boxes with per-face shaded vertex colours merged into one geometry. A whole row with trees costs one draw call.
 - **A hex-returning `shade`** (`js/art.js`): `Kit.gfx.shade` returns `rgb(...)`, which can't be shaded again (it silently turns black). Worth fixing in the kit.
 - **Voxel particles** (`makeParticles` in `js/art.js`): an `InstancedMesh` of little cubes with per-cube colour, gravity and spin.
-- **Comic bursts** (`burstTexture` in `js/art.js`): a starburst with a word (POW!, SPLASH!, SAVED!, BUSTED!). KOF Teddy has a similar one.
+- **Comic bursts** (`burstTexture` in `js/art.js`): a starburst with a word (POW!, SPLASH!, SAVED!, BUSTED!). King of Bonk! has a similar one.
 - **The swim ring** (`buildRing`) and **a second dog** (`buildDog`, a spotty pup with a wagging tail) in `js/art.js`.
 - **Standing celebrations** (`standPose` in `js/hero.js`), the same idea as FlaTTy Birds': `wave` and `peace` stride while posing, and this settles the legs.
 - **The crossing search** (`search` in `js/world.js`): a breadth-first search through time over a grid with moving hazards. It's generic enough for any lane-crossing game.
