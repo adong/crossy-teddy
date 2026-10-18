@@ -1,5 +1,7 @@
 # HoppiTTy Hop
 
+[![HoppiTTy Hop title screen](docs/screenshot.jpg)](https://adong.github.io/crossy-teddy/)
+
 An endless hopper in the spirit of Crossy Road, starring Teddy and Tommy, built with Claude Code from plain JavaScript and Three.js.
 Hop across a chunky voxel world of meadows, busy roads, rivers with logs and lily pads, and subway tracks with fast trains.
 There are no image, model or audio files: every block is a coloured box, the kids come from the shared kit, and every sound is synthesised.
